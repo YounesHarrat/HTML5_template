@@ -1,5 +1,21 @@
 // récupérer les input depuis le DOM
 
+//Hauteur du jumbotron
+//Fonction appelée au scroll de la souris
+let parallax = () =>{
+    //On calcule la distance de scroll, puis on réduit la taille du container du jumbotron en fonction de cette distance
+    let scrolled = window.scrollY;
+    let hauteurJumbotron = document.querySelector('.jumbotron').getAttribute('height');
+    document.querySelector('.fond').style.height = (hauteurJumbotron-scrolled) ;
+    console.log(scrolled)
+    console.log(hauteurJumbotron)
+}
+//Ajout de la fonction à l'événement scroll
+window.addEventListener('scroll', (e)=>{
+parallax();
+
+});
+
 let pseudoCTN = document.querySelector('div#pseudoCtn')
 let emailCTN = document.querySelector('div#emailCtn')
 let passCTN = document.querySelector('div#passwordCtn')
